@@ -11,13 +11,12 @@ import time
 
 
 app = FastAPI()
-
-interpreter = tf.lite.Interpreter(model_path="converted_model.tflite")
+interpreter = tf.lite.Interpreter(model_path="ai/converted_model.tflite")
 interpreter.allocate_tensors()
 input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
 
-class_names = json.load(open('classes.json', 'r'))
+class_names = json.load(open('ai/classes.json', 'r'))
 
 def process_image(data):
     print("Processing image")
