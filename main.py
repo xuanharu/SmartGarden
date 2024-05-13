@@ -3,7 +3,7 @@ from Adafruit_IO import MQTTClient
 
 AIO_FEED_ID = ["bbc-led", "bbc-water"] 
 AIO_USERNAME = "Jackson25092002"
-AIO_KEY = "aio_bSLx71ROFxRHjvmNMcdEo6kRauuJ"
+AIO_KEY = "aio_VYxC01FauEUsp5UgDwADI6FdlwQH"
 
 def connected(client):
     print("Ket noi thanh cong ...")
@@ -29,5 +29,4 @@ client.connect()
 client.loop_background()
 
 while True:
-    
     pass
