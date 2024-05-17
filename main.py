@@ -6,7 +6,7 @@ from Adafruit_IO import MQTTClient
 
 AIO_FEED_ID = ["bbc-led", "bbc-water","bbc-temp"] 
 AIO_USERNAME = "Jackson25092002"
-AIO_KEY = "aio_StjO71uMwx3bKFM1XpliJF3bI3xp"
+AIO_KEY = "aio_hHsq64g2HGWhBSLOc1ySbmni454M"
 
 def connected(client):
     print("Ket noi thanh cong ...")
@@ -22,8 +22,17 @@ def disconnected(client):
 
 def message(client , feed_id , payload):
     print("Nhan du lieu: " + payload + " from feed_id: " + feed_id)
+    if feed_id == "bbc-led":
+        if payload == "0":
+            writeData("1")
+        else :
+            writeData("2")
+    if feed_id == "bbc-water":
+        if payload == "0":
+            writeData("3")
+        else :
+            writeData("4")
     
-
 
 client = MQTTClient(AIO_USERNAME , AIO_KEY)
 client.on_connect = connected
@@ -49,7 +58,7 @@ def getPort():
 if getPort() != "None":
     ser = serial.Serial( port=getPort(), baudrate=115200)
     print(ser)
-    
+
 def processData(client, data):
     data = data.replace("!", "")
     data = data.replace("#", "")
@@ -76,6 +85,10 @@ def readSerial(client):
                 mess = ""
             else:
                 mess = mess[end+1:]
+
+def writeData(data):
+    ser.write(str(data).encode())               
+# lấy dữ liệu từ file chuyển dến máy 
 while True:
     readSerial(client)
     time.sleep(1)
