@@ -12049,6 +12049,7 @@
 <body>
 
     <!-- ======= Top Bar ======= -->
+
     <section id="topbar" class="d-flex align-items-center">
         <div class="container d-flex justify-content-center justify-content-md-between">
             <div class="contact-info d-flex align-items-center">
@@ -12203,31 +12204,59 @@
                                             </div>
                                         </div>
                                     </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6">
+                                    <div class="card bg-light text-dark mb-4">
+                                        <div class="card-body">
+                                            <div class="container">
+                                                <span>LED</span>
+                                                <input type="checkbox" id="led" onclick="Led()" checked>
+                                               <label for="check" class="button"></label>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-
-
+                                <div class="col-xl-3 col-md-6">
+                                    <div class="card bg-light text-dark mb-4">
+                                        <div class="card-body">
+                                            <div class="container">
+                                                <span>WATER</span>
+                                                <input type="checkbox" id="water" class="checkbox" onclick="Water()" checked>
+                                                <label for="check" class="button"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                                <!--bieudoTest-->
+                                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                                 <div class="row">
                                     <div class="col-xl-6">
                                         <div class="card mb-4">
                                             <div class="card-header">
-                                                <i class="fas fa-chart-area me-1"></i> Area Temperature & Humidity Chart
+                                                <i class="fas fa-chart-area me-1"></i>Temperature Chart
                                             </div>
-                                            <div class="card-body"><img id="myAreaChart" width="100%" height="400" src="https://i.pinimg.com/736x/81/5f/2e/815f2eaf548526625885ff5a3a161e12.jpg" alt="Area Chart">
+                                            <div class="card-body">
+                                                <canvas id="myChartTemp" width="100%" height="300"></canvas>
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="col-xl-6">
                                         <div class="card mb-4">
                                             <div class="card-header">
-                                                <i class="fas fa-chart-bar me-1"></i> Bar Chart Example
+                                                <i class="fas fa-chart-area me-1"></i> Humidity Chart
                                             </div>
-                                            <div class="card-body"><img id="myAreaChart" width="100%" height="400" src="https://www.researchgate.net/profile/Andrei-Andryieuski/publication/281552350/figure/fig5/AS:280442004623365@1443873992189/Dielectric-permittivity-of-water-as-a-function-of-frequency-for-the-temperature-0-100C.png"
-                                                    alt="Area Chart"></div>
+                                            <div class="card-body">
+                                                <canvas id="myChartHumi" width="100%" height="300"></canvas>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-
-                        </main>
+                            </main>
                         </div>
                     </div>
                 </body>
@@ -12276,7 +12305,9 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-
+    <script src="../js/temp_chart.js"></script>
+    <script src="../js/controller.js"></script>
+    <script src="../js/humi_chart.js"></script>
 </body>
 
 </html>

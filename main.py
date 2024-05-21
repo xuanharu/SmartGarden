@@ -4,9 +4,9 @@ import random
 import time
 from Adafruit_IO import MQTTClient
 
-AIO_FEED_ID = ["bbc-led", "bbc-water","bbc-temp"] 
+AIO_FEED_ID = ["bbc-led", "bbc-water","bbc-temp","bbc-humi"] 
 AIO_USERNAME = "Jackson25092002"
-AIO_KEY = "aio_hHsq64g2HGWhBSLOc1ySbmni454M"
+AIO_KEY = "aio_qNNB11Z4SydjdvRelyrlC2OgqYzZ"
 
 def connected(client):
     print("Ket noi thanh cong ...")
@@ -59,7 +59,7 @@ if getPort() != "None":
     ser = serial.Serial( port=getPort(), baudrate=115200)
     print(ser)
 
-def processData(client, data):
+def processData(data):
     data = data.replace("!", "")
     data = data.replace("#", "")
     splitData = data.split(":")
@@ -70,9 +70,11 @@ def processData(client, data):
         client.publish("bbc-water", splitData[2])
     if (splitData[1] == "LED"):
         client.publish("bbc-led", splitData[2])
+    if (splitData[1] == "HUMI"):
+        client.publish("bbc-humi", splitData[2])
 mess = ""
 
-def readSerial(client):
+def readSerial():
     bytesToRead = ser.inWaiting()
     if (bytesToRead > 0):
         global mess
@@ -80,7 +82,7 @@ def readSerial(client):
         while ("#" in mess) and ("!" in mess):
             start = mess.find("!")
             end = mess.find("#")
-            processData(client, mess[start:end + 1])
+            processData(mess[start:end + 1])
             if (end == len(mess)):
                 mess = ""
             else:
@@ -90,7 +92,7 @@ def writeData(data):
     ser.write(str(data).encode())               
 # lấy dữ liệu từ file chuyển dến máy 
 while True:
-    readSerial(client)
+    readSerial()
     time.sleep(1)
 
     
