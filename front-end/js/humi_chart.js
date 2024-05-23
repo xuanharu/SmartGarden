@@ -161,7 +161,7 @@ setInterval(() => {
 //     b.update();
 // }, 5000);
 
-function updateCharts() {
+/* function updateCharts() {
     $.getJSON("	https://io.adafruit.com/api/v2/Jackson25092002/feeds/bbc-humi/data", function (data) {
         console.log("Humidity Data:", data);
         const temp = parseFloat(data.last_value);
@@ -177,7 +177,7 @@ function updateCharts() {
         console.error("Humidity API request failed: " + textStatus + ", " + error);
     });
 
-    /* $.getJSON("https://io.adafruit.com/Jackson25092002/feeds/bbc-humidity", function (data) {
+    $.getJSON("https://io.adafruit.com/Jackson25092002/feeds/bbc-humidity", function (data) {
         console.log("Humidity Data:", data);
         const humidity = parseFloat(data.last_value);
         const time = new Date().toLocaleTimeString();
@@ -190,5 +190,5 @@ function updateCharts() {
         humidityChart.update();
     }).fail(function(jqxhr, textStatus, error) {
         console.error("Humidity API request failed: " + textStatus + ", " + error);
-    }); */
-}
+    });
+} */

@@ -6,7 +6,7 @@ from Adafruit_IO import MQTTClient
 
 AIO_FEED_ID = ["bbc-led", "bbc-water","bbc-temp","bbc-humi"] 
 AIO_USERNAME = "Jackson25092002"
-AIO_KEY = "aio_qNNB11Z4SydjdvRelyrlC2OgqYzZ"
+AIO_KEY = "aio_khRO24Z2QYYhenArvYYH3gym5DGN"
 
 def connected(client):
     print("Ket noi thanh cong ...")
@@ -22,18 +22,6 @@ def disconnected(client):
 
 def message(client , feed_id , payload):
     print("Nhan du lieu: " + payload + " from feed_id: " + feed_id)
-    if feed_id == "bbc-led":
-        if payload == "0":
-            writeData("1")
-        else :
-            writeData("2")
-    if feed_id == "bbc-water":
-        if payload == "0":
-            writeData("3")
-        else :
-            writeData("4")
-    
-
 client = MQTTClient(AIO_USERNAME , AIO_KEY)
 client.on_connect = connected
 client.on_disconnect = disconnected

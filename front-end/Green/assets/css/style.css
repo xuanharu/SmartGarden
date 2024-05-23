@@ -1462,36 +1462,48 @@ section {
 /*----------------------------- Tịnh code phần gardening */
 
 
-.button {
-  background-color: black; 
+.button{
+  background-color: #d2d2d2;
   width: 200px;
   height: 100px;
-  border-radius: 50px; 
+  border-radius: 200px;
   cursor: pointer;
   position: relative;
   transition: 0.2s;
 }
-
-.button::before {
+.button::before{
   position: absolute;
-  content: '';
-  background-color: white;
+  content: "";
+  background-color: #fff;
   width: 90px;
   height: 90px;
-  border-radius: 45px; 
-  left: 5px; 
-  top: 5px; 
+  border-radius: 200px;
+  margin: 5px;
   transition: 0.2s;
 }
-
-input:checked + .button {
-  background-color: green; 
+input:checked + .button{
+  background-color: green;
 }
-
-input:checked + .button::before {
-  transform: translateX(100px); 
+input:checked + .button::before{
+  transform: translateX(100px);
 }
-
-input {
+input{
   display: none;
+}
+
+.graph-text {
+  top: 125.61289978027344px;
+  left: 61px;
+  color: rgba(247, 247, 247, 1);
+  width: 48px;
+  height: auto;
+  position: absolute;
+  font-size: 17px;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: Manrope;
+  font-weight: 600;
+  line-height: 24px;
+  font-stretch: normal;
+  text-decoration: none;
 }

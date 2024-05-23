@@ -11,7 +11,7 @@ setInterval(() => {
     });
     $.getJSON("	https://io.adafruit.com/api/v2/Jackson25092002/feeds/bbc-water", function (data) {
         console.log(data.last_value);
-        if (data.last_value == "OPEN")
+        if (data.last_value == "ON")
             document.getElementById("water").checked = true;
         else document.getElementById("water").checked = false;
     });
@@ -32,7 +32,7 @@ function Led() {
             headers: {
                 'Content-Type': 'application/json',
                 'Content-Type': 'application/json',
-                'X-AIO-Key': 'aio_qNNB11Z4SydjdvRelyrlC2OgqYzZ'
+                'X-AIO-Key': 'aio_khRO24Z2QYYhenArvYYH3gym5DGN'
             },
             data: JSON.stringify({"value": "ON"}),
             processData: false,
@@ -51,7 +51,7 @@ function Led() {
             headers: {
                 'Content-Type': 'application/json',
                 'Content-Type': 'application/json',
-                'X-AIO-Key': 'aio_qNNB11Z4SydjdvRelyrlC2OgqYzZ'
+                'X-AIO-Key': 'aio_khRO24Z2QYYhenArvYYH3gym5DGN'
             },
             data: JSON.stringify({ "value": "OFF" }),
             processData: false,
@@ -75,7 +75,7 @@ function Water() {
             headers: {
                 'Content-Type': 'application/json',
                 'Content-Type': 'application/json',
-                'X-AIO-Key': 'aio_qNNB11Z4SydjdvRelyrlC2OgqYzZ'
+                'X-AIO-Key': 'aio_khRO24Z2QYYhenArvYYH3gym5DGN'
             },
             data: JSON.stringify({"value": "ON"}),
             processData: false,
@@ -94,7 +94,7 @@ function Water() {
             headers: {
                 'Content-Type': 'application/json',
                 'Content-Type': 'application/json',
-                'X-AIO-Key': 'aio_qNNB11Z4SydjdvRelyrlC2OgqYzZ'
+                'X-AIO-Key': 'aio_khRO24Z2QYYhenArvYYH3gym5DGN'
             },
             data: JSON.stringify({ "value": "OFF" }),
             processData: false,
