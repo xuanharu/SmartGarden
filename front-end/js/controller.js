@@ -32,7 +32,7 @@ function Led() {
             headers: {
                 'Content-Type': 'application/json',
                 'Content-Type': 'application/json',
-                'X-AIO-Key': 'aio_khRO24Z2QYYhenArvYYH3gym5DGN'
+                'X-AIO-Key': 'aio_QGtS915wi9VQFwjrPqf00s0fejSG'
             },
             data: JSON.stringify({"value": "ON"}),
             processData: false,
@@ -51,7 +51,7 @@ function Led() {
             headers: {
                 'Content-Type': 'application/json',
                 'Content-Type': 'application/json',
-                'X-AIO-Key': 'aio_khRO24Z2QYYhenArvYYH3gym5DGN'
+                'X-AIO-Key': 'aio_QGtS915wi9VQFwjrPqf00s0fejSG'
             },
             data: JSON.stringify({ "value": "OFF" }),
             processData: false,
@@ -75,7 +75,7 @@ function Water() {
             headers: {
                 'Content-Type': 'application/json',
                 'Content-Type': 'application/json',
-                'X-AIO-Key': 'aio_khRO24Z2QYYhenArvYYH3gym5DGN'
+                'X-AIO-Key': 'aio_QGtS915wi9VQFwjrPqf00s0fejSG'
             },
             data: JSON.stringify({"value": "ON"}),
             processData: false,
@@ -94,7 +94,7 @@ function Water() {
             headers: {
                 'Content-Type': 'application/json',
                 'Content-Type': 'application/json',
-                'X-AIO-Key': 'aio_khRO24Z2QYYhenArvYYH3gym5DGN'
+                'X-AIO-Key': 'aio_QGtS915wi9VQFwjrPqf00s0fejSG'
             },
             data: JSON.stringify({ "value": "OFF" }),
             processData: false,

@@ -99,10 +99,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-var currentTime = new Date();
-function randomInt(){
-    return Math.floor(Math.random() * 20 + 15);
-}
+// var currentTime = new Date();
+// function randomInt(){
+//     return Math.floor(Math.random() * 20 + 15);
+// }
 
 setInterval(() => {    
     currentTime = new Date();
