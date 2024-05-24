@@ -161,21 +161,6 @@ setInterval(() => {
 //     b.update();
 // }, 5000);
 
-function updateCharts() {
-    $.getJSON("https://io.adafruit.com/api/v2/Jackson25092002/feeds/bbc-temp/data", function (data) {
-        console.log("Temperature Data:", data);
-        const temp = parseFloat(data.last_value);
-        const time = new Date().toLocaleTimeString();
-        temperatureData.push(temp);
-        temperatureLabels.push(time);
-        if (temperatureData.length > 10) {
-            temperatureData.shift();
-            temperatureLabels.shift();
-        }
-        temperatureChart.update();
-    }).fail(function(jqxhr, textStatus, error) {
-        console.error("Temperature API request failed: " + textStatus + ", " + error);
-    });
 
     /* $.getJSON("https://io.adafruit.com/Jackson25092002/feeds/bbc-humidity", function (data) {
         console.log("Humidity Data:", data);
@@ -191,4 +176,3 @@ function updateCharts() {
     }).fail(function(jqxhr, textStatus, error) {
         console.error("Humidity API request failed: " + textStatus + ", " + error);
     }); */
-}
